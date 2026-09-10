@@ -1,0 +1,2742 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dharaniselvi Moorthi | Portfolio</title>
+
+<meta name="description"
+content="Portfolio of Dharaniselvi Moorthi - B.Tech Information Technology student and aspiring software developer.">
+
+<link rel="icon" type="image/png" href="profile.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --bg: #f6f7fb;
+    --card: rgba(255,255,255,0.82);
+    --card-solid: #ffffff;
+    --text: #151923;
+    --muted: #626b7a;
+    --border: #e3e7ef;
+
+    --accent: #5b4cff;
+    --accent2: #2675ff;
+    --purple: #8b5cf6;
+    --green: #059669;
+    --yellow: #d97706;
+
+    --shadow: rgba(20,25,40,0.10);
+    --radius: 16px;
+
+    --max: 1120px;
+
+    --display: "Space Grotesk", sans-serif;
+    --body: "Inter", sans-serif;
+    --mono: "JetBrains Mono", monospace;
+}
+
+html[data-theme="dark"] {
+
+    --bg: #080b12;
+    --card: rgba(18,23,34,0.82);
+    --card-solid: #121722;
+
+    --text: #edf2f7;
+    --muted: #9aa6b8;
+    --border: #252d3b;
+
+    --accent: #8b7cff;
+    --accent2: #5da0ff;
+    --purple: #b58cff;
+    --green: #5ee7b7;
+    --yellow: #f5c451;
+
+    --shadow: rgba(0,0,0,0.45);
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    line-height: 1.6;
+    transition: background .3s ease, color .3s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+::selection {
+    background: var(--accent);
+    color: white;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(91,76,255,.13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(38,117,255,.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(139,92,246,.08),
+            transparent 30%
+        );
+}
+
+
+/* =========================
+   COMMON
+========================= */
+
+.container {
+    width: min(var(--max), calc(100% - 40px));
+    margin: auto;
+}
+
+section {
+    scroll-margin-top: 84px;
+    padding: 100px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+    font-family: var(--display);
+    font-size: 34px;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--accent);
+    margin-right: 12px;
+}
+
+.mono {
+    font-family: var(--mono);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: color-mix(
+        in srgb,
+        var(--bg) 88%,
+        transparent
+    );
+
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav {
+    width: min(var(--max), calc(100% - 30px));
+    margin: auto;
+
+    min-height: 64px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.logo-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: 7px;
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex: 1;
+}
+
+.nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    padding: 22px 14px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: .2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+}
+
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+.theme-btn {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    border: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(91,76,255,.15),
+            rgba(38,117,255,.15)
+        );
+
+    color: var(--text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.theme-btn:hover {
+    transform: rotate(15deg) scale(1.05);
+    border-color: var(--accent);
+}
+
+.theme-btn svg {
+    width: 19px;
+    height: 19px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    padding: 110px 0 100px;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.profile-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.profile {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 3px solid var(--accent);
+
+    box-shadow:
+        0 0 0 7px rgba(91,76,255,.12),
+        0 0 35px rgba(91,76,255,.18);
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eyebrow {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+}
+
+.eyebrow::before {
+    content: "// ";
+    color: var(--muted);
+}
+
+.hero h1 {
+    font-family: var(--display);
+    font-size: clamp(42px, 6vw, 65px);
+    line-height: 1.05;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent),
+            var(--accent2),
+            var(--purple)
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.role {
+    font-family: var(--mono);
+    color: var(--accent2);
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 600px;
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    font-family: var(--mono);
+    font-size: 12px;
+
+    color: var(--green);
+
+    padding: 8px 13px;
+
+    border-radius: 100px;
+
+    background: rgba(5,150,105,.09);
+    border: 1px solid rgba(5,150,105,.25);
+
+    margin-bottom: 28px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--green);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 18px;
+
+    border-radius: 9px;
+
+    border: 1px solid var(--border);
+
+    background: var(--card-solid);
+    color: var(--text);
+
+    font-family: var(--mono);
+    font-size: 12.5px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+.btn-primary {
+    color: white;
+    border-color: transparent;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent2)
+        );
+
+    box-shadow:
+        0 10px 25px rgba(91,76,255,.2);
+}
+
+.social {
+    display: flex;
+    gap: 18px;
+}
+
+.social a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.social a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================
+   TERMINAL
+========================= */
+
+.terminal {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+
+    background: var(--card);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 30px 70px var(--shadow);
+}
+
+.terminal-head {
+    padding: 13px 15px;
+
+    background: rgba(127,127,127,.06);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.terminal-head span {
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.red {
+    background: #ef4444;
+}
+
+.yellow {
+    background: #f59e0b;
+}
+
+.green {
+    background: #22c55e;
+}
+
+.terminal-name {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-left: 8px;
+}
+
+.terminal-body {
+    padding: 25px;
+
+    min-height: 260px;
+
+    font-family: var(--mono);
+    font-size: 13px;
+
+    color: var(--muted);
+
+    line-height: 2;
+}
+
+.profile-summary {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    background: var(--card);
+    box-shadow: 0 30px 70px var(--shadow);
+}
+
+.profile-summary h3 {
+    font-family: var(--display);
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.profile-summary p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.profile-summary-list {
+    display: grid;
+    gap: 13px;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 12px;
+}
+
+.profile-summary-list strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.prop {
+    color: var(--accent2);
+}
+
+.string {
+    color: var(--green);
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 17px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+}
+
+.stat {
+    padding: 24px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    text-align: center;
+
+    transition: .2s;
+}
+
+.stat:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.stat-number {
+    font-family: var(--display);
+    font-size: 29px;
+    color: var(--accent);
+}
+
+.stat-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 18px;
+}
+
+.skill {
+    padding: 23px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    transition: .2s;
+}
+
+.skill:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent2);
+}
+
+.skill h3 {
+    font-family: var(--display);
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    font-family: var(--mono);
+    font-size: 11px;
+
+    padding: 6px 9px;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    color: var(--muted);
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.filters {
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.filter {
+    border: 1px solid var(--border);
+    background: var(--card-solid);
+
+    color: var(--muted);
+
+    padding: 8px 15px;
+    border-radius: 100px;
+
+    font-family: var(--mono);
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+.filter.active,
+.filter:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 20px;
+}
+
+.project {
+    padding: 24px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    transition: .25s;
+}
+
+.project:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+}
+
+.project h3 {
+    font-family: var(--display);
+    font-size: 18px;
+}
+
+.project p,
+.project li {
+    color: var(--muted);
+    font-size: 13.5px;
+}
+
+.project ul {
+    padding-left: 18px;
+}
+
+.project li {
+    margin-bottom: 6px;
+}
+
+.project-links {
+    margin-top: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.project-links a {
+    color: var(--accent2);
+    font-family: var(--mono);
+    font-size: 11.5px;
+}
+
+
+/* =========================
+   MERN LIVE SHOWCASE
+========================= */
+
+.mern-showcase {
+    margin-top: 55px;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(91,76,255,.06), rgba(38,117,255,.05));
+}
+
+.subsection-heading {
+    margin-bottom: 25px;
+}
+
+.subsection-heading h3 {
+    font-family: var(--display);
+    font-size: 26px;
+    margin: 7px 0;
+}
+
+.subsection-heading p {
+    color: var(--muted);
+    font-size: 13.5px;
+}
+
+.mern-live-card {
+    min-height: 0;
+}
+
+ .mern-showcase .projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.mern-live-card .project-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end;
+}
+
+.mern-live-card .project-links a {
+    text-align: center;
+}
+
+
+@media (max-width: 650px) {
+    .mern-showcase .projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+.live-link {
+    color: var(--green) !important;
+}
+
+.live-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+    border-left: 1px solid var(--border);
+    margin-left: 7px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 45px;
+}
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: -6px;
+    top: 4px;
+
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 0 5px var(--bg),
+        0 0 15px var(--accent);
+}
+
+.timeline-item h3 {
+    font-family: var(--display);
+    font-size: 18px;
+}
+
+.timeline-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--accent2);
+
+    margin: 5px 0 12px;
+}
+
+.timeline-item li,
+.timeline-item p {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-bottom: 6px;
+}
+
+
+/* =========================
+   DOCUMENT CARDS
+========================= */
+
+.documents {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 14px;
+}
+
+.document {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 17px 18px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+
+    border-radius: 12px;
+
+    transition: .2s;
+}
+
+.document:hover {
+    transform: translateY(-3px);
+    border-color: var(--purple);
+}
+
+.document-title {
+    font-size: 13.5px;
+}
+
+.document-issuer {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+.arrow {
+    color: var(--purple);
+    font-size: 17px;
+}
+
+
+/* =========================
+   ACHIEVEMENTS
+========================= */
+
+.achievement {
+    border-left-color: var(--yellow);
+}
+
+.achievement:hover {
+    border-color: var(--yellow);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    text-align: center;
+
+    padding: 55px 30px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(91,76,255,.08),
+            rgba(38,117,255,.06)
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+.contact h2 {
+    font-family: var(--display);
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.contact p {
+    color: var(--muted);
+    max-width: 550px;
+    margin: auto auto 28px;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 35px;
+    text-align: center;
+}
+
+footer p {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+}
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+#topBtn {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent2)
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: .25s;
+
+    z-index: 200;
+}
+
+#topBtn.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px) {
+
+    .hero-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 70px;
+    }
+
+    .nav {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .nav-links a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media(max-width:550px) {
+
+    section {
+        padding: 70px 0;
+    }
+
+    .container {
+        width: min(100% - 28px, var(--max));
+    }
+
+    .profile {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact {
+        padding: 40px 18px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<nav class="nav">
+
+<div class="logo">
+<span class="logo-dot"></span>
+portfolio
+</div>
+
+<div class="nav-links">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#internship">Internship</a>
+<a href="#education">Education</a>
+<a href="#certifications">Certifications</a>
+<a href="#achievements">Achievements</a>
+<a href="#achievements">Activities</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+<button
+class="theme-btn"
+id="themeBtn"
+title="Toggle light / dark mode"
+aria-label="Toggle light dark mode">
+
+<svg id="themeIcon"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<circle cx="12" cy="12" r="4"></circle>
+
+<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+
+</svg>
+
+</button>
+
+</nav>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section id="home">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="profile-row">
+
+<div class="profile">
+
+<img
+src="profile.png"
+alt="Dharaniselvi Moorthi">
+
+</div>
+
+<div class="eyebrow">
+aspiring software developer
+</div>
+
+</div>
+
+
+<h1>
+Dharaniselvi
+<span>Moorthi</span>
+</h1>
+
+
+<div class="role">
+Java · MERN Stack · Full-Stack Development
+</div>
+
+
+<div class="status">
+<span class="status-dot"></span>
+Open to entry-level opportunities
+</div>
+
+
+<p class="hero-description">
+
+B.Tech Information Technology student building full-stack products and applying deep learning to real-world problems — currently a MERN Full-Stack Development Intern.
+
+</p>
+
+
+<div class="buttons">
+
+<a
+href="#projects"
+class="btn btn-primary">
+
+View Projects →
+
+</a>
+
+
+<a
+href="Dharaniselvi Moorthi Resumeh.pdf"
+class="btn"
+download>
+
+Download Résumé ↓
+
+</a>
+
+
+<a
+href="#contact"
+class="btn">
+
+Get in Touch
+
+</a>
+
+</div>
+
+
+<div class="social">
+
+<a
+href="https://github.com/Dharaniselvimoorthi"
+target="_blank">
+
+GitHub ↗
+
+</a>
+
+<a
+href="https://www.linkedin.com/in/dharaniselvi-moorthi"
+target="_blank">
+
+LinkedIn ↗
+
+</a>
+
+<a href="mailto:dharaniselvimoorthi@gmail.com">
+
+Email
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="profile-summary">
+<h3>Professional Profile</h3>
+<p>Information Technology graduate focused on building reliable web applications and practical software solutions.</p>
+<div class="profile-summary-list">
+<div><strong>Specialization</strong> Full-stack web development</div>
+<div><strong>Technology</strong> Java, Python and MERN stack</div>
+<div><strong>Availability</strong> Open to professional opportunities</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+<div class="container">
+
+<h2 class="section-title">
+<span>01</span>
+About
+</h2>
+
+
+<div class="about-grid">
+
+<div class="about-text">
+
+<p>
+I'm a final-year B.Tech Information Technology student (2023–2027), currently in my last year and actively looking for my first opportunity as a software developer.
+</p>
+
+<p>
+Over the course of my degree I've built a foundation in Java, Python, C, web development, and databases through hands-on projects, a MERN full-stack internship, workshops, hackathons and certifications.
+</p>
+
+<p>
+I'm looking for an entry-level role where I can contribute what I know, learn from experienced professionals, and grow into a strong software professional.
+</p>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat">
+<div class="stat-number">8.98</div>
+<div class="stat-label">CGPA · B.Tech IT</div>
+</div>
+
+<div class="stat">
+<div class="stat-number">3</div>
+<div class="stat-label">Featured Projects</div>
+</div>
+
+<div class="stat">
+<div class="stat-number">13+</div>
+<div class="stat-label">Certifications</div>
+</div>
+
+<div class="stat">
+<div class="stat-number">7</div>
+<div class="stat-label">Hackathons & Events</div>
+</div>
+
+<div class="stat">
+<div class="stat-number">8 Wks</div>
+<div class="stat-label">MERN Internship</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title">
+<span>02</span>
+Skills
+</h2>
+
+
+<div class="skills-grid">
+
+
+<div class="skill">
+
+<h3>Programming</h3>
+
+<div class="tags">
+<span class="tag">Java</span>
+<span class="tag">Python</span>
+<span class="tag">C</span>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<h3>Web Development</h3>
+
+<div class="tags">
+<span class="tag">HTML</span>
+<span class="tag">CSS</span>
+<span class="tag">JavaScript</span>
+<span class="tag">React.js</span>
+<span class="tag">Node.js</span>
+<span class="tag">Express.js</span>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<h3>Database</h3>
+
+<div class="tags">
+<span class="tag">MongoDB Atlas</span>
+<span class="tag">MongoDB Compass</span>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<h3>Core Concepts</h3>
+
+<div class="tags">
+<span class="tag">OOP</span>
+<span class="tag">DBMS</span>
+<span class="tag">DSA</span>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<h3>Tools</h3>
+
+<div class="tags">
+<span class="tag">Git</span>
+<span class="tag">GitHub</span>
+<span class="tag">Postman</span>
+<span class="tag">TortoiseGit</span>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<h3>Interpersonal</h3>
+
+<div class="tags">
+<span class="tag">Problem Solving</span>
+<span class="tag">Communication</span>
+<span class="tag">Teamwork</span>
+<span class="tag">Adaptability</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+<div class="container">
+
+<h2 class="section-title">
+<span>03</span>
+Projects
+</h2>
+
+
+<div class="filters">
+
+<button class="filter active" data-filter="all">
+All
+</button>
+
+<button class="filter" data-filter="ai">
+AI / ML
+</button>
+
+<button class="filter" data-filter="mern">
+MERN Stack
+</button>
+
+</div>
+
+
+<div class="projects">
+
+
+<!-- PROJECT 1 -->
+
+<div class="project" data-category="ai">
+
+<h3>Plant Disease Detection</h3>
+
+<p>
+Image-based plant disease detection using deep learning.
+</p>
+
+<ul>
+
+<li>
+Built a CNN model to classify plant diseases from leaf images.
+</li>
+
+<li>
+Used TensorFlow/Keras and NumPy for model training and preprocessing.
+</li>
+
+</ul>
+
+<div class="tags">
+
+<span class="tag">Python</span>
+<span class="tag">TensorFlow</span>
+<span class="tag">Keras</span>
+<span class="tag">NumPy</span>
+
+</div>
+
+
+<div class="project-links">
+
+<a
+href="https://github.com/Dharaniselvimoorthi/plant-disease-detection"
+target="_blank">
+
+View Code ↗
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 2 -->
+
+<div class="project" data-category="mern">
+
+<h3>AR Try-On & Furniture Visualizer</h3>
+
+<p>
+AR-based clothing and furniture recommendation system.
+</p>
+
+<ul>
+
+<li>
+Building a web-based AR platform for virtual clothing try-on and furniture placement.
+</li>
+
+<li>
+Combining MERN Stack with Three.js and AR.js for real-time 3D/AR rendering.
+</li>
+
+</ul>
+
+<div class="tags">
+
+<span class="tag">MERN</span>
+<span class="tag">Three.js</span>
+<span class="tag">AR.js</span>
+<span class="tag">MongoDB</span>
+
+</div>
+
+<div class="project-links">
+<a href="https://github.com/Dharaniselvimoorthi/ar-tryon-store.git" target="_blank" rel="noopener noreferrer">
+View Source Code ↗
+</a>
+</div>
+
+</div>
+
+
+<!-- PROJECT 3 -->
+
+<div class="project" data-category="mern">
+
+<h3>MERN Full-Stack Suite</h3>
+
+<p>
+A set of CRUD-based full-stack applications.
+</p>
+
+<ul>
+
+<li>
+Four independent applications with CRUD flows using MongoDB, Express.js, React.js and Node.js.
+</li>
+
+</ul>
+
+
+<div class="tags">
+
+<span class="tag">MongoDB</span>
+<span class="tag">Express</span>
+<span class="tag">React</span>
+<span class="tag">Node.js</span>
+
+</div>
+
+
+<div class="project-links">
+
+<a
+href="https://github.com/Dharaniselvimoorthi/book_library"
+target="_blank">
+Book Library ↗
+</a>
+
+<a
+href="https://github.com/Dharaniselvimoorthi/stickyy_notes"
+target="_blank">
+Sticky Notes ↗
+</a>
+
+<a
+href="https://github.com/Dharaniselvimoorthi/personal_expense_tracker"
+target="_blank">
+Expense Tracker ↗
+</a>
+
+<a
+href="https://github.com/Dharaniselvimoorthi/Todo-application"
+target="_blank">
+To-Do App ↗
+</a>
+
+</div>
+
+</div>
+
+<div class="mern-showcase" id="mern-suite">
+<div class="subsection-heading">
+<div class="eyebrow">MERN application portfolio</div>
+<h3>MERN Applications</h3>
+<p>Four separate full-stack applications with direct source-code and live-demo links.</p>
+</div>
+
+<div class="projects">
+
+<div class="project mern-live-card">
+<h3>Book Library</h3>
+<p>Full-stack library management application built with the MERN stack.</p>
+<div class="tags"><span class="tag">MongoDB</span><span class="tag">Express</span><span class="tag">React</span><span class="tag">Node.js</span></div>
+<div class="project-links">
+<a href="https://github.com/Dharaniselvimoorthi/book_library" target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+<a class="live-link" href="https://book-library-frontend-bnv4.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+</div>
+</div>
+
+<div class="project mern-live-card">
+<h3>Sticky Notes</h3>
+<p>Full-stack notes application for creating, updating and managing notes.</p>
+<div class="tags"><span class="tag">MongoDB</span><span class="tag">Express</span><span class="tag">React</span><span class="tag">Node.js</span></div>
+<div class="project-links">
+<a href="https://github.com/Dharaniselvimoorthi/stickyy_notes" target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+<a class="live-link" href="https://stickyy-notes.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+</div>
+</div>
+
+<div class="project mern-live-card">
+<h3>Personal Expense Tracker</h3>
+<p>Full-stack expense tracking application with CRUD functionality.</p>
+<div class="tags"><span class="tag">MongoDB</span><span class="tag">Express</span><span class="tag">React</span><span class="tag">Node.js</span></div>
+<div class="project-links">
+<a href="https://github.com/Dharaniselvimoorthi/personal_expense_tracker" target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+<a class="live-link" href="https://personal-expense-tracker-frontend-d80t.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+</div>
+</div>
+
+<div class="project mern-live-card">
+<h3>To-Do Application</h3>
+<p>Full-stack task management application with create, update and delete operations.</p>
+<div class="tags"><span class="tag">MongoDB</span><span class="tag">Express</span><span class="tag">React</span><span class="tag">Node.js</span></div>
+<div class="project-links">
+<a href="https://github.com/Dharaniselvimoorthi/Todo-application" target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+<a class="live-link" href="https://todo-application-frontend-krst.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     INTERNSHIP
+========================= -->
+
+<section id="internship">
+
+<div class="container">
+
+<h2 class="section-title">
+<span>04</span>
+Internship
+</h2>
+
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h3>
+MERN Full-Stack Development Intern — Eduskill
+</h3>
+
+<div class="timeline-meta">
+8-Week Internship · August 2026
+</div>
+
+
+<ul>
+
+<li>
+Built full-stack web applications using React, Node.js, Express.js and MongoDB.
+</li>
+
+<li>
+Developed REST APIs and implemented JWT-based authentication with Mongoose.
+</li>
+
+<li>
+Delivered an E-commerce Platform and a Text Search Indexer as project work.
+</li>
+
+</ul>
+
+
+<br>
+
+
+<div class="documents">
+
+
+<a
+class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/eduskill-internship-certificate.pdf"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Internship Certificate
+</div>
+
+<div class="document-issuer">
+Eduskill
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a
+class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/aicte-virtual-internship-certificate.pdf"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+AICTE Virtual Internship Certificate
+</div>
+
+<div class="document-issuer">
+AICTE · Eduskill
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a
+class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/eduskill-offer-letter.pdf"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Offer Letter
+</div>
+
+<div class="document-issuer">
+Eduskill
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a
+class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/text-search-indexer-report.pdf"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Text Search Indexer Project Report
+</div>
+
+<div class="document-issuer">
+Project Report
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education">
+
+<div class="container">
+
+<h2 class="section-title">
+<span>05</span>
+Education
+</h2>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item">
+
+<h3>
+B.Tech, Information Technology
+</h3>
+
+<div class="timeline-meta">
+E.G.S. Pillay Engineering College, Nagapattinam · 2023 – 2027
+</div>
+
+<p>
+CGPA: 8.98
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<h3>
+Higher Secondary Certificate (HSC)
+</h3>
+
+<div class="timeline-meta">
+St. Theresa's Girls Higher Secondary School · 2022 – 2023
+</div>
+
+<p>
+Scored 80%
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<h3>
+Secondary School Leaving Certificate (SSLC)
+</h3>
+
+<div class="timeline-meta">
+St. Theresa's Girls Higher Secondary School · 2020 – 2021
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CERTIFICATIONS
+========================= -->
+
+<section id="certifications">
+
+<div class="container">
+
+<h2 class="section-title">
+<span>06</span>
+Certifications
+</h2>
+
+
+<div class="documents">
+
+
+<a class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/ibm-ai-skillsbuild.png"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Getting Started with Artificial Intelligence
+</div>
+
+<div class="document-issuer">
+IBM SkillsBuild
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/c-programming-ebox.pdf"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Essentials of C Programming
+</div>
+
+<div class="document-issuer">
+Ebox
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/ebox-python-intro.png"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Problem Solving & Python Introduction
+</div>
+
+<div class="document-issuer">
+Ebox
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/python-infosys.pdf"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Basics of Python
+</div>
+
+<div class="document-issuer">
+Infosys Springboard
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/oracle-java-foundations.png"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Java Foundations
+</div>
+
+<div class="document-issuer">
+Oracle
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/docker-kodekloud.pdf"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Docker Training for Absolute Beginners
+</div>
+
+<div class="document-issuer">
+KodeKloud
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/kubernetes-kodekloud.pdf"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Kubernetes for Absolute Beginners
+</div>
+
+<div class="document-issuer">
+KodeKloud
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/orionshift-fullstack-bootcamp.png"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Genius Full-Stack Development Bootcamp
+</div>
+
+<div class="document-issuer">
+OrionShift Pvt. Ltd.
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<div class="document">
+
+<div>
+
+<div class="document-title">
+Privacy & Security in Online Social Media
+</div>
+
+<div class="document-issuer">
+NPTEL
+</div>
+
+</div>
+
+<span class="arrow">—</span>
+
+</div>
+
+
+<a class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/responsible-safe-ai-nptel.png"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Responsible & Safe AI Systems
+</div>
+
+<div class="document-issuer">
+NPTEL · IIT Hyderabad
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/affective-computing-nptel.pdf"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Affective Computing
+</div>
+
+<div class="document-issuer">
+NPTEL · IIT Delhi · 73%
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/healthcare-entrepreneurship-nptel.pdf"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Healthcare Entrepreneurship
+</div>
+
+<div class="document-issuer">
+NPTEL · IIT Madras · 98%
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a class="document"
+href="./Dharaniselvi_Moorthi_Documents/certs/data-mining-simplilearn.pdf"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Introduction to Data Mining
+</div>
+
+<div class="document-issuer">
+Simplilearn SkillUp
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ACHIEVEMENTS
+========================= -->
+
+<section id="achievements">
+
+<div class="container">
+
+<h2 class="section-title">
+<span>07</span>
+Achievements & Activities
+</h2>
+
+
+<div class="documents">
+
+
+<a
+class="document achievement"
+href="./Dharaniselvi_Moorthi_Documents/achievements/achievers-day-award.png"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+🏆 Faculty Choice Award — Achievers' Day
+</div>
+
+<div class="document-issuer">
+EGS Pillay Engineering College · 2024–25
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a
+class="document"
+href="./Dharaniselvi_Moorthi_Documents/achievements/hacknhustle-hackathon.png"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+HacknHustle — 1-Day Hackathon
+</div>
+
+<div class="document-issuer">
+Zentics Data Club · Oct 2025
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a
+class="document"
+href="./Dharaniselvi_Moorthi_Documents/achievements/bi-buzz-paper-presentation.png"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Paper Presentation — BI Club Event
+</div>
+
+<div class="document-issuer">
+BI Buzz · EGS Pillay
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a
+class="document"
+href="./Dharaniselvi_Moorthi_Documents/achievements/technothirst-ar-shopping-paper.png"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Paper Presentation — "AR Shopping"
+</div>
+
+<div class="document-issuer">
+TechnothirsT'25 · AVC College
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a
+class="document"
+href="./Dharaniselvi_Moorthi_Documents/achievements/technothirst-code-debug-quiz.png"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Code Debugging & Tech Quiz
+</div>
+
+<div class="document-issuer">
+TechnothirsT'25 · AVC College
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a
+class="document"
+href="./Dharaniselvi_Moorthi_Documents/achievements/aws-cloud-bootcamp.png"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+AWS Cloud Bootcamp — 2-Day Workshop
+</div>
+
+<div class="document-issuer">
+EGS Pillay · Dept. of IT · Mar 2026
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+<a
+class="document"
+href="./Dharaniselvi_Moorthi_Documents/achievements/iot-workshop-care.png"
+target="_blank">
+
+<div>
+
+<div class="document-title">
+Workshop on IoT — Ashtonics 2K25
+</div>
+
+<div class="document-issuer">
+CARE College of Engineering · Apr 2025
+</div>
+
+</div>
+
+<span class="arrow">↗</span>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact">
+
+<div class="eyebrow">
+get in touch
+</div>
+
+<h2>
+Let's build something together.
+</h2>
+
+<p>
+I'm actively looking for entry-level software developer roles. Feel free to reach out for opportunities, collaborations, or just to say hi.
+</p>
+
+
+<div class="contact-buttons">
+
+
+<button
+class="btn btn-primary"
+id="copyEmail">
+
+Copy Email
+
+</button>
+
+
+<a
+href="mailto:dharaniselvimoorthi@gmail.com"
+class="btn">
+
+Email Directly
+
+</a>
+
+
+<a
+href="tel:+916383095071"
+class="btn">
+
+📞 +91 63830 95071
+
+</a>
+
+
+<a
+href="https://www.linkedin.com/in/dharaniselvi-moorthi"
+target="_blank"
+class="btn">
+
+LinkedIn ↗
+
+</a>
+
+
+<a
+href="https://github.com/Dharaniselvimoorthi"
+target="_blank"
+class="btn">
+
+GitHub ↗
+
+</a>
+
+</div>
+
+
+<br>
+
+
+<a
+href="Dharaniselvi_Moorthi_Documents.zip"
+class="btn"
+download>
+
+⬇ Download All Documents (ZIP)
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<p>
+© 2026 Dharaniselvi Moorthi
+</p>
+
+</footer>
+
+
+<button id="topBtn">
+↑
+</button>
+
+
+<script>
+
+/* =========================
+   THEME
+========================= */
+
+const themeBtn = document.getElementById("themeBtn");
+const root = document.documentElement;
+
+let savedTheme =
+localStorage.getItem("portfolio-theme");
+
+if (savedTheme) {
+    root.setAttribute("data-theme", savedTheme);
+}
+
+
+themeBtn.addEventListener("click", function() {
+
+    const current =
+        root.getAttribute("data-theme");
+
+    const next =
+        current === "dark"
+        ? "light"
+        : "dark";
+
+    root.setAttribute(
+        "data-theme",
+        next
+    );
+
+    localStorage.setItem(
+        "portfolio-theme",
+        next
+    );
+
+});
+
+
+/* =========================
+   PROJECT FILTER
+========================= */
+
+const filters =
+document.querySelectorAll(".filter");
+
+const projects =
+document.querySelectorAll(".project");
+
+
+filters.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        filters.forEach(function(btn) {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const selected =
+            button.dataset.filter;
+
+        projects.forEach(function(project) {
+
+            if (
+                selected === "all" ||
+                project.dataset.category === selected
+            ) {
+
+                project.style.display = "";
+
+            } else {
+
+                project.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* =========================
+   NAVIGATION + ACTIVE NAV
+========================= */
+
+const navLinks = document.querySelectorAll(".nav-links a[href^=\"#\"]");
+const pageSections = document.querySelectorAll("main section[id]");
+const header = document.querySelector("header");
+
+function goToSection(id) {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    const headerHeight = header ? header.offsetHeight : 0;
+    const top = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+    window.scrollTo({
+        top: Math.max(0, top),
+        behavior: "smooth"
+    });
+
+    // Keep the URL as a section hash only.
+    if (history.pushState) {
+        history.pushState(null, "", "#" + id);
+    } else {
+        window.location.hash = id;
+    }
+}
+
+navLinks.forEach(function(link) {
+    link.addEventListener("click", function(event) {
+        event.preventDefault();
+        const id = link.getAttribute("href").substring(1);
+        goToSection(id);
+    });
+});
+
+function updateActiveNav() {
+    const marker = window.pageYOffset + (header ? header.offsetHeight : 0) + 80;
+    let current = "home";
+
+    pageSections.forEach(function(section) {
+        if (marker >= section.offsetTop) {
+            current = section.id;
+        }
+    });
+
+    navLinks.forEach(function(link) {
+        link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + current
+        );
+    });
+}
+
+window.addEventListener("scroll", updateActiveNav, { passive: true });
+window.addEventListener("load", function() {
+    if (window.location.hash) {
+        const id = window.location.hash.substring(1);
+        window.setTimeout(function() { goToSection(id); }, 100);
+    }
+    updateActiveNav();
+});
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+const topBtn =
+document.getElementById("topBtn");
+
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 500) {
+
+        topBtn.classList.add("show");
+
+    } else {
+
+        topBtn.classList.remove("show");
+
+    }
+
+});
+
+
+topBtn.addEventListener("click", function() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+/* =========================
+   COPY EMAIL
+========================= */
+
+const copyEmail =
+document.getElementById("copyEmail");
+
+
+copyEmail.addEventListener("click", async function() {
+
+    const email =
+        "dharaniselvimoorthi@gmail.com";
+
+    try {
+
+        await navigator.clipboard.writeText(email);
+
+        copyEmail.textContent =
+            "✓ Email Copied!";
+
+        setTimeout(function() {
+
+            copyEmail.textContent =
+                "Copy Email";
+
+        }, 2000);
+
+    } catch (error) {
+
+        window.location.href =
+            "mailto:" + email;
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
